@@ -6,7 +6,7 @@ export default function Contact() {
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const API_URL = "http://localhost:5000/api/contact";
+    const API_URL = "https://portfolio-aiq4.onrender.com";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
