@@ -1,16 +1,50 @@
-# React + Vite
+# 💼 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal **portfolio website** showcasing my skills, projects, and experience as a **MERN Stack Developer**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👋 About Me
 
-## React Compiler
+Hi, I’m **Ritik Chaurasiya**, a **Computer Science and Engineering student** with a strong interest in **full-stack web development**. I specialize in building scalable and responsive web applications using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I enjoy turning ideas into real-world applications and continuously improving my skills by working on practical projects.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Skills
+
+- **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap
+- **Backend:** Node.js, Express.js, REST APIs
+- **Database:** MongoDB, MongoDB Atlas
+- **Tools & Platforms:** Git, GitHub, Vercel, Render
+- **Other:** Nodemailer, JWT Authentication, Axios
+
+---
+
+## 🚀 Projects
+
+### MERN Stack Application
+A full-stack web application developed using the MERN stack with secure authentication, MongoDB Atlas integration, and email functionality using Nodemailer. The project follows RESTful architecture and modern development practices.
+
+---
+
+## 🌐 Live Demo
+
+🔗 **Portfolio Website:** https://your-portfolio-link.com  
+🔗 **GitHub Repository:** https://github.com/your-username/portfolio
+
+---
+
+## ⚙️ Technologies Used
+
+- React.js
+- Node.js
+- Express.js
+- MongoDB Atlas
+- CSS / Bootstrap
+
+---
+
+## 📂 Project Structure
+
