@@ -1,0 +1,428 @@
+/* Navbar */
+
+/* Navy Gradient Background */
+.nav-navy {
+    background: linear-gradient(90deg, #0b1437, #0a1d50);
+}
+
+/* Logo glow */
+.logo:hover {
+    text-shadow: 0 0 10px #00d9ff;
+    transform: scale(1.05);
+}
+
+/* Animated hover underline */
+.nav-anim {
+    position: relative;
+}
+
+.nav-anim::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00d9ff;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s ease;
+}
+
+.nav-anim:hover::after {
+    width: 100%;
+}
+
+.nav-anim:hover {
+    color: #00d9ff !important;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(45deg, #00d9ff, #0077ff);
+    color: white;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+    box-shadow: 0 0 12px #00d9ff;
+    transform: translateY(-2px);
+}
+
+
+
+/* Hero */
+
+
+
+/* Background & Spacing */
+.hero-section {
+    background: linear-gradient(180deg, #0b1437, #0e153b);
+    padding: 170px 0 130px;
+    /* enough space from navbar */
+}
+
+/* Accent Color */
+.accent {
+    color: #00d9ff;
+}
+
+/* Primary Button */
+.btn-accent {
+    background: linear-gradient(45deg, #00d9ff, #0077ff);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #00d9ff;
+}
+
+/* Outline Button */
+.btn-outline-accent {
+    border: 2px solid #00d9ff;
+    color: #00d9ff;
+    font-weight: 600;
+    border-radius: 8px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-accent:hover {
+    background: rgba(0, 217, 255, 0.15);
+    box-shadow: 0 0 12px #00d9ff;
+}
+
+/* Fade Animation */
+.fade-up {
+    animation: fadeUp 0.9s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 140px 0 100px;
+    }
+}
+
+
+/* About */
+
+
+
+/* Dark Background */
+.section-dark {
+    background: linear-gradient(180deg, #090e26, #0e153b);
+}
+
+/* Accent Color */
+.accent {
+    color: #00d9ff;
+}
+
+.bg-accent {
+    background: rgba(0, 217, 255, 0.2);
+    border: 1px solid #00d9ff;
+    color: #00d9ff;
+    font-weight: 500;
+}
+
+/* Fade Animation */
+.fade-up {
+    animation: fadeUp 0.9s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card */
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    transition: 0.4s ease;
+    border-radius: 12px;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+}
+
+
+
+
+/* Project */
+
+
+
+.section-dark {
+    background: linear-gradient(180deg, #090e26, #0e153b);
+}
+
+/* Accent */
+.accent {
+    color: #00d9ff;
+}
+
+/* Fade Animation */
+.fade-up {
+    animation: fadeUp 0.9s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* ProjectCard */
+
+
+
+
+
+/* Accent Colors */
+.bg-accent {
+    background: rgba(0, 217, 255, 0.2);
+    border: 1px solid #00d9ff;
+    color: #00d9ff;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-accent {
+    background: linear-gradient(45deg, #00d9ff, #0077ff);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #00d9ff;
+}
+
+.btn-outline-accent {
+    border: 2px solid #00d9ff;
+    color: #00d9ff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-outline-accent:hover {
+    background: rgba(0, 217, 255, 0.15);
+    box-shadow: 0 0 10px #00d9ff;
+}
+
+/* Card Hover */
+.project-card {
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+}
+
+/* Image */
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+
+
+
+/* Contact */
+
+
+
+
+
+/* Dark Section Background */
+.section-dark {
+    background: linear-gradient(180deg, #090e26, #0e153b);
+}
+
+/* Accent */
+.accent {
+    color: #00d9ff;
+}
+
+/* Form Input Dark Theme */
+.input-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    color: white;
+    font-weight: 500;
+}
+
+.input-dark::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input-dark:focus {
+    border-color: #00d9ff;
+    box-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+}
+
+/* Button Accent */
+.btn-accent {
+    background: linear-gradient(45deg, #00d9ff, #0077ff);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #00d9ff;
+}
+
+/* Status Text */
+.status-text {
+    color: #00d9ff;
+    font-size: 16px;
+}
+
+/* Fade Animation */
+.fade-up {
+    animation: fadeUp 0.9s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* footer */
+
+
+
+
+/* Dark Gradient */
+.footer-dark {
+    background: linear-gradient(180deg, #060b20, #081028);
+}
+
+/* Accent Color */
+.accent {
+    color: #00d9ff;
+}
+
+/* Social Icons */
+.footer-link {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #00d9ff;
+    transform: translateY(-2px);
+}
+
+/* Text */
+footer p {
+    font-size: 15px;
+}
+
+
+
+
+/* Education */
+
+
+
+.section-dark {
+    background: linear-gradient(180deg, #090e26, #0e153b);
+}
+
+.accent {
+    color: #00d9ff;
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #00d9ff;
+    transition: 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.text-accent {
+    color: #00d9ff;
+}
+
+/* Fade-up animation */
+.fade-up {
+    animation: fadeUp 0.9s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
