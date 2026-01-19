@@ -21,7 +21,7 @@ const Footer = () => {
                         <i className="bi bi-linkedin"></i>
                     </a>
 
-                    <a href="ritikchaurasiya2005@mail.com" className="footer-link">
+                    <a href="mailto:ritikchaurasiya2005@gmail.com" className="footer-link">
                         <i className="bi bi-envelope-fill"></i>
                     </a>
                 </div>
