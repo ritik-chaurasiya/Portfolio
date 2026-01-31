@@ -17,7 +17,7 @@ const projectsData = [
   image: "/images/Examprep.png", // put examprep image in public/images/examprep.png
   techStack: ["React", "Node.js", "Express", "MongoDB", "Bootstrap"],
   github: "https://github.com/ritik-chaurasiya/Examprep",
-  demo: "https"
+  demo: "https://examprep-two.vercel.app/"
   },
 {
   _id: "3",
