@@ -1,43 +1,44 @@
 const express = require("express");
 const router = express.Router();
-const Message = require("../models/Message");
 const nodemailer = require("nodemailer");
+const Message = require("../models/Message");
 
 router.post("/", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // 1️⃣ Save message to MongoDB
-    const savedMessage = await Message.create({ name, email, message });
+    if (!name || !email || !message) {
+      return res.status(400).json({ success: false });
+    }
 
-    // 2️⃣ Setup Email Transporter
+    // ✅ Save to DB
+    await Message.create({ name, email, message });
+
+    // ✅ Transporter INSIDE try
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: { rejectUnauthorized: false },
     });
 
-    // 3️⃣ Email Sent to YOU
+    // ✅ Send Mail
     await transporter.sendMail({
-      from: email,
+      from: `"Portfolio" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: "New Portfolio Message",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
 
-    // 4️⃣ Auto reply to USER (optional)
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: "Thanks for contacting me!",
-      text: `Hello ${name},\n\nThanks for your message. I will reply soon.\n\nRegards,\nRitik`,
-    });
+    res.json({ success: true });
 
-    res.json({ success: true, message: "Message saved & email sent" });
-  } catch (error) {
-    console.log("Contact Error ❌", error);
+  } catch (err) {
+    console.log("CONTACT ERROR:", err);
     res.status(500).json({ success: false });
   }
 });
