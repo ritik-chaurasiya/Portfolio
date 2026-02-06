@@ -15,16 +15,15 @@ router.post("/", async (req, res) => {
     await Message.create({ name, email, message });
 
     // ✅ Transporter INSIDE try
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: { rejectUnauthorized: false },
-    });
+   // ✅ Transporter for Render (Gmail service mode)
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 
     // ✅ Send Mail
     await transporter.sendMail({
