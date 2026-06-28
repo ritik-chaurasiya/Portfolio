@@ -3,7 +3,7 @@ const projectsData = [
     _id: "1",
     title: "CV Store",
     description: "CV Store is a MERN Stack application for creating and managing professional resumes. It enables users to build ATS-friendly resumes, choose templates, edit information, and download resumes in PDF format with secure authentication.",
-    image: "/images/IIMM.png",
+    image: "/images/CV_Store.png",
     techStack: ["HTML", "CSS", "JavaScript", "Bootstrap","React", "Node.js", "Express", "MongoDB","JWT Authentication", "Cloudinary Image Upload", "Google OAuth Authentication"],
     github: "https://github.com/ritik-chaurasiya/CV-Strore",
     demo: "https://cv-strore.vercel.app/"
