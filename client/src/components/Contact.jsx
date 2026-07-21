@@ -1,11 +1,125 @@
+// import React, { useState } from "react";
+
+// export default function Contact() {
+//     const [form, setForm] = useState({ name: "", email: "", message: "" });
+//     const [status, setStatus] = useState("");
+//     const [loading, setLoading] = useState(false);
+
+//     // ✅ Correct API URL
+//     const API_URL = "https://portfolio-aiq4.onrender.com/api/contact";
+//     // const API_URL = "http://localhost:5000/api/contact";
+
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         setLoading(true);
+//         setStatus("");
+
+//         try {
+//             const res = await fetch(API_URL, {
+//                 method: "POST",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify(form),
+//             });
+
+//             let data;
+//             try {
+//                 data = await res.json();
+//             } catch {
+//                 throw new Error("Invalid JSON");
+//             }
+
+//             if (data.success) {
+//                 setStatus("Message sent successfully ✔");
+//                 setForm({ name: "", email: "", message: "" });
+//             } else {
+//                 setStatus("Something went wrong ❌");
+//             }
+//         } catch (err) {
+//             setStatus("Server not responding ❌");
+//         }
+
+//         setLoading(false);
+//     };
+
+//     return (
+//         <section id="contact" className="py-5 section-dark fade-up">
+//             <div className="container">
+//                 <div className="text-center mb-4">
+//                     <h2 className="text-white fw-bold display-6">
+//                         Contact <span className="accent">Me</span>
+//                     </h2>
+//                 </div>
+
+//                 <div className="row justify-content-center">
+//                     <div className="col-lg-6">
+//                         <form className="contact-form" onSubmit={handleSubmit}>
+//                             <div className="mb-3">
+//                                 <input
+//                                     type="text"
+//                                     className="form-control input-dark"
+//                                     placeholder="Your Name"
+//                                     value={form.name}
+//                                     onChange={(e) =>
+//                                         setForm({ ...form, name: e.target.value })
+//                                     }
+//                                     required
+//                                 />
+//                             </div>
+
+//                             <div className="mb-3">
+//                                 <input
+//                                     type="email"
+//                                     className="form-control input-dark"
+//                                     placeholder="Your Email"
+//                                     value={form.email}
+//                                     onChange={(e) =>
+//                                         setForm({ ...form, email: e.target.value })
+//                                     }
+//                                     required
+//                                 />
+//                             </div>
+
+//                             <div className="mb-3">
+//                                 <textarea
+//                                     rows="4"
+//                                     className="form-control input-dark"
+//                                     placeholder="Your Message"
+//                                     value={form.message}
+//                                     onChange={(e) =>
+//                                         setForm({ ...form, message: e.target.value })
+//                                     }
+//                                     required
+//                                 />
+//                             </div>
+
+//                             <button type="submit" className="btn btn-accent w-100 py-2">
+//                                 {loading ? "Sending..." : "Send Message"}
+//                             </button>
+//                         </form>
+
+//                         {status && (
+//                             <p className="text-center mt-3 status-text">{status}</p>
+//                         )}
+//                     </div>
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }
+
+
 import React, { useState } from "react";
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // ✅ Correct API URL
     const API_URL = "https://portfolio-aiq4.onrender.com/api/contact";
     // const API_URL = "http://localhost:5000/api/contact";
 
@@ -17,25 +131,26 @@ export default function Contact() {
         try {
             const res = await fetch(API_URL, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                },
                 body: JSON.stringify(form),
             });
 
-            let data;
-            try {
-                data = await res.json();
-            } catch {
-                throw new Error("Invalid JSON");
-            }
+            const data = await res.json();
 
             if (data.success) {
-                setStatus("Message sent successfully ✔");
-                setForm({ name: "", email: "", message: "" });
+                setStatus("Thank you! Your message has been sent successfully.");
+                setForm({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
             } else {
-                setStatus("Something went wrong ❌");
+                setStatus("Unable to send your message. Please try again.");
             }
-        } catch (err) {
-            setStatus("Server not responding ❌");
+        } catch (error) {
+            setStatus("Server is currently unavailable. Please try again later.");
         }
 
         setLoading(false);
@@ -44,20 +159,34 @@ export default function Contact() {
     return (
         <section id="contact" className="py-5 section-dark fade-up">
             <div className="container">
-                <div className="text-center mb-4">
-                    <h2 className="text-white fw-bold display-6">
-                        Contact <span className="accent">Me</span>
+
+                {/* Heading */}
+                <div className="text-center mb-5">
+                    <h2 className="display-5 fw-bold text-white">
+                        Get In <span className="accent">Touch</span>
                     </h2>
+
+                    <p
+                        className="text-secondary mx-auto"
+                        style={{ maxWidth: "650px" }}
+                    >
+                        Have a project in mind, a job opportunity, or simply want
+                        to connect? Feel free to reach out. I'll get back to you
+                        as soon as possible.
+                    </p>
                 </div>
 
                 <div className="row justify-content-center">
-                    <div className="col-lg-6">
+
+                    <div className="col-lg-7">
+
                         <form className="contact-form" onSubmit={handleSubmit}>
+
                             <div className="mb-3">
                                 <input
                                     type="text"
                                     className="form-control input-dark"
-                                    placeholder="Your Name"
+                                    placeholder="Full Name"
                                     value={form.name}
                                     onChange={(e) =>
                                         setForm({ ...form, name: e.target.value })
@@ -70,7 +199,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     className="form-control input-dark"
-                                    placeholder="Your Email"
+                                    placeholder="Email Address"
                                     value={form.email}
                                     onChange={(e) =>
                                         setForm({ ...form, email: e.target.value })
@@ -79,11 +208,11 @@ export default function Contact() {
                                 />
                             </div>
 
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <textarea
-                                    rows="4"
+                                    rows="6"
                                     className="form-control input-dark"
-                                    placeholder="Your Message"
+                                    placeholder="Write your message..."
                                     value={form.message}
                                     onChange={(e) =>
                                         setForm({ ...form, message: e.target.value })
@@ -92,16 +221,28 @@ export default function Contact() {
                                 />
                             </div>
 
-                            <button type="submit" className="btn btn-accent w-100 py-2">
-                                {loading ? "Sending..." : "Send Message"}
+                            <button
+                                type="submit"
+                                className="btn btn-accent w-100 py-3 fw-semibold"
+                                disabled={loading}
+                            >
+                                {loading ? "Sending Message..." : "Send Message"}
                             </button>
+
                         </form>
 
                         {status && (
-                            <p className="text-center mt-3 status-text">{status}</p>
+                            <div className="text-center mt-4">
+                                <p className="status-text mb-0">
+                                    {status}
+                                </p>
+                            </div>
                         )}
+
                     </div>
+
                 </div>
+
             </div>
         </section>
     );
